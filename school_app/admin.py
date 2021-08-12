@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Pupil, Teacher, Grade, Dairy
+from .models import Pupil, Teacher, Grade, Rate
+
+
+class RateAdmin(admin.ModelAdmin):
+    list_display = ('pupil', 'time', 'subject_in_school', 'rate')
 
 
 class DairyAdmin(admin.ModelAdmin):
@@ -19,6 +23,6 @@ class TeacherAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Teacher, TeacherAdmin)
-admin.site.register(Dairy, DairyAdmin)
+admin.site.register(Rate, RateAdmin)
 admin.site.register(Pupil, PupilAdmin)
 admin.site.register(Grade, GradeAdmin)
